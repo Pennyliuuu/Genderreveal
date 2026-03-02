@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Chris & Ariel 性別Party 邀請函</title>
+    <style>
+        /* 全局設定 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(to right, #9fe7fc 0%, #facacc 100%);
+            color: #5D4037; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* 內容容器 */
+        .container {
+            text-align: center;
+            z-index: 2;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.35); 
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            width: 90%;
+            max-width: 480px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* 活動日期顯示區 */
+        .event-time-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px 10px;
+            border-radius: 18px;
+            min-width: 110px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .box-text {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #795548;
+        }
+
+        .box-label {
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        /* 活動資訊方框 */
+        .info-card {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 25px;
+            padding: 30px 25px;
+            text-align: left;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .info-card h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(93, 64, 55, 0.15);
+            padding-bottom: 12px;
+        }
+
+        .info-item {
+            margin-bottom: 22px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
+            color: #8D6E63;
+            margin-bottom: 5px;
+        }
+
+        .info-text {
+            font-size: 1.25rem;
+            display: block;
+            line-height: 1.5;
+        }
+
+        /* 長地址專屬樣式：確保單行顯示 */
+        #address-text {
+            font-size: 1rem; 
+            white-space: nowrap;
+            letter-spacing: -0.8px;
+        }
+
+        /* 地圖導航連結 */
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+            color: #5D4037;
+            text-decoration: none; 
+            font-size: 1.2rem;
+            font-weight: bold;
+            gap: 8px;
+        }
+
+        .map-link span.icon {
+            color: #FF5252; 
+            font-size: 1.4rem;
+        }
+
+        /* Dress Code 提醒文字樣式 */
+        .notice-text {
+            font-size: 1.15rem;
+            color: #5D4037;
+            font-weight: 500;
+            line-height: 1.7;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* 泡泡動畫 */
+        .bubble {
+            position: fixed;
+            bottom: -60px;
+            background: rgba(255, 255, 255, 0.45);
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.3);
+            animation: rise var(--duration) ease-in infinite;
+            z-index: 1;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1) translateX(0); opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { transform: translateY(-115vh) scale(1.5) translateX(-20px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>2026<br>Chris & Ariel 性別Party</h1>
+        <p class="subtitle">
+            誠摯邀請大家一起同樂<br>
+            一起與我們迎接喜悅
+        </p>
+        
+        <div class="event-time-display">
+            <div class="info-box">
+                <span class="box-text">03</span>
+                <span class="box-label">月</span>
+            </div>
+            <div class="info-box">
+                <span class="box-text">08</span>
+                <span class="box-label">日</span>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <h2>活動資訊</h2>
+            
+            <div class="info-item">
+                <span class="info-label">時間</span>
+                <span class="info-text">14:30 - 17:00</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">地點</span>
+                <span class="info-text">Chris & Ariel House</span>
+                <span class="info-text" id="address-text">台北市萬華區莒光路112巷9弄3號1樓</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=台北市萬華區莒光路112巷9弄3號1樓" target="_blank" class="map-link">
+                    <span class="icon">📍</span>開啟 Google Map 導航
+                </a>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">下午茶 🍰</span>
+                <span class="info-text">提供飲料及茶點</span>
+            </div>
+
+            <div class="info-item" style="margin-bottom: 0;">
+                <span class="info-label">👗 Dress Code</span>
+                <span class="notice-text">
+                    💙 男寶寶：請穿藍色<br>
+                    🩷 女寶寶：請穿粉色<br>
+                    🤍 猜不透：請穿白色
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            const size = Math.random() * 35 + 10 + 'px';
+            const left = Math.random() * 100 + 'vw';
+            const duration = Math.random() * 5 + 8 + 's';
+            bubble.style.width = size;
+            bubble.style.height = size;
+            bubble.style.left = left;
+            bubble.style.setProperty('--duration', duration);
+            document.body.appendChild(bubble);
+            setTimeout(() => { bubble.remove(); }, 15000);
+        }
+        setInterval(createBubble, 600);
+    </script>
+</body>
+</html>
